@@ -26,6 +26,8 @@ public class User {
     @Column(nullable = false)
     private Boolean emailVerified = false;
 
+    @Column(nullable = false)
+    private boolean is_vip = false;
     @JsonIgnore
     private String password;
 
@@ -37,6 +39,14 @@ public class User {
 
     public Long getId() {
         return id;
+    }
+
+    public Boolean getIs_vip() {
+        return is_vip;
+    }
+
+    public void setIs_vip(boolean is_vip) {
+        this.is_vip = is_vip;
     }
 
     public void setId(Long id) {
@@ -98,4 +108,5 @@ public class User {
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
+
 }

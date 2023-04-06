@@ -25,6 +25,14 @@ class Profile extends Component {
                         <div className="profile-name">
                            <h2>{this.props.currentUser.name}</h2>
                            <p className="profile-email">{this.props.currentUser.email}</p>
+                            {
+                                this.props.currentUser.is_vip ? (
+                                    <p>VIP</p>
+                                ):(
+                                    <p>Chưa VIP</p>
+                                )
+                            }
+
                         </div>
                     </div>
                 </div>    

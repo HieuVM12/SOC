@@ -21,7 +21,10 @@ public class FacebookOAuth2UserInfo extends OAuth2UserInfo {
     public String getEmail() {
         return (String) attributes.get("email");
     }
-
+    @Override
+    public boolean getIs_vip() {
+        return (boolean) attributes.get("is_vip");
+    }
     @Override
     public String getImageUrl() {
         if(attributes.containsKey("picture")) {
