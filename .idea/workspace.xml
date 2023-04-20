@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b899ddc-2cb3-4f55-952a-257c90822cb3" name="Changes" comment="" />
+    <list default="true" id="9b899ddc-2cb3-4f55-952a-257c90822cb3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-social/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-social/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-social/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-social/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-social/src/user/profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-social/src/user/profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-social/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/react-social/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,10 +29,25 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Hieu/IdeaProjects/spring-boot-react-oauth2-social-login-demo/spring-social",
+    "last_opened_file_path": "C:/Users/Hieu/IdeaProjects/SOC/spring-social",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SOC" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SOC" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -36,6 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680581848703</updated>
       <workItem from="1680581850194" duration="144000" />
+      <workItem from="1681957432741" duration="731000" />
     </task>
     <servers />
   </component>

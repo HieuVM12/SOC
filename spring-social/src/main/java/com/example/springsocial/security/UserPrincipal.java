@@ -1,5 +1,6 @@
 package com.example.springsocial.security;
 
+
 import com.example.springsocial.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -12,18 +13,20 @@ import java.util.List;
 import java.util.Map;
 
 public class UserPrincipal implements OAuth2User, UserDetails {
-    private Long id;
+    private int id;
     private String email;
     private String password;
-    private boolean is_vip;
+
+    private String username;
+
     private Collection<? extends GrantedAuthority> authorities;
     private Map<String, Object> attributes;
 
-    public UserPrincipal(Long id, String email, String password,boolean is_vip, Collection<? extends GrantedAuthority> authorities) {
+    public UserPrincipal(int id, String email, String password, String username , Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.email = email;
         this.password = password;
-        this.is_vip = is_vip;
+        this.username = username;
         this.authorities = authorities;
     }
 
@@ -35,7 +38,7 @@ public class UserPrincipal implements OAuth2User, UserDetails {
                 user.getId(),
                 user.getEmail(),
                 user.getPassword(),
-                user.getIs_vip(),
+                user.getUsername(),
                 authorities
         );
     }
@@ -46,7 +49,7 @@ public class UserPrincipal implements OAuth2User, UserDetails {
         return userPrincipal;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
@@ -61,8 +64,9 @@ public class UserPrincipal implements OAuth2User, UserDetails {
 
     @Override
     public String getUsername() {
-        return email;
+        return username;
     }
+
 
 
     @Override

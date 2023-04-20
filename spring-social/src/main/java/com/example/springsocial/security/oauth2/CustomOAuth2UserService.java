@@ -1,6 +1,7 @@
 package com.example.springsocial.security.oauth2;
 
 import com.example.springsocial.exception.OAuth2AuthenticationProcessingException;
+import com.example.springsocial.model.AccountType;
 import com.example.springsocial.model.AuthProvider;
 import com.example.springsocial.model.User;
 import com.example.springsocial.repository.UserRepository;
@@ -66,17 +67,14 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         User user = new User();
 
         user.setProvider(AuthProvider.valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()));
-        user.setProviderId(oAuth2UserInfo.getId());
-        user.setName(oAuth2UserInfo.getName());
+        user.setUsername(oAuth2UserInfo.getName());
         user.setEmail(oAuth2UserInfo.getEmail());
-        user.setImageUrl(oAuth2UserInfo.getImageUrl());
-        user.setIs_vip(oAuth2UserInfo.getIs_vip());
+        user.setAccountType(AccountType.BASIC);
         return userRepository.save(user);
     }
 
     private User updateExistingUser(User existingUser, OAuth2UserInfo oAuth2UserInfo) {
-        existingUser.setName(oAuth2UserInfo.getName());
-        existingUser.setImageUrl(oAuth2UserInfo.getImageUrl());
+        existingUser.setUsername(oAuth2UserInfo.getName());
         return userRepository.save(existingUser);
     }
 

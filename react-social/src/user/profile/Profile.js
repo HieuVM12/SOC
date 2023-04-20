@@ -13,9 +13,7 @@ class Profile extends Component {
                     <div className="profile-info">
                         <div className="profile-avatar">
                             { 
-                                this.props.currentUser.imageUrl ? (
-                                    <img src={this.props.currentUser.imageUrl} alt={this.props.currentUser.name}/>
-                                ) : (
+                                (
                                     <div className="text-avatar">
                                         <span>{this.props.currentUser.name && this.props.currentUser.name[0]}</span>
                                     </div>
@@ -25,13 +23,6 @@ class Profile extends Component {
                         <div className="profile-name">
                            <h2>{this.props.currentUser.name}</h2>
                            <p className="profile-email">{this.props.currentUser.email}</p>
-                            {
-                                this.props.currentUser.is_vip ? (
-                                    <p>VIP</p>
-                                ):(
-                                    <p>Chưa VIP</p>
-                                )
-                            }
 
                         </div>
                     </div>

@@ -1,6 +1,7 @@
 package com.example.springsocial.controller;
 
 import com.example.springsocial.exception.BadRequestException;
+import com.example.springsocial.model.AccountType;
 import com.example.springsocial.model.AuthProvider;
 import com.example.springsocial.model.User;
 import com.example.springsocial.payload.ApiResponse;
@@ -62,15 +63,14 @@ public class AuthController {
 
         // Creating user's account
         User user = new User();
-        user.setName(signUpRequest.getName());
+        user.setUsername(signUpRequest.getUsername());
         user.setEmail(signUpRequest.getEmail());
         user.setPassword(signUpRequest.getPassword());
         user.setProvider(AuthProvider.local);
-
+        user.setAccountType(AccountType.BASIC);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
         User result = userRepository.save(user);
-
         URI location = ServletUriComponentsBuilder
                 .fromCurrentContextPath().path("/user/me")
                 .buildAndExpand(result.getId()).toUri();

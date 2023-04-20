@@ -1,5 +1,7 @@
 package com.example.springsocial.security.oauth2.user;
 
+import com.example.springsocial.model.AccountType;
+
 import java.util.Map;
 
 public class GoogleOAuth2UserInfo extends OAuth2UserInfo {
@@ -23,13 +25,8 @@ public class GoogleOAuth2UserInfo extends OAuth2UserInfo {
         return (String) attributes.get("email");
     }
 
-    @Override
-    public String getImageUrl() {
-        return (String) attributes.get("picture");
-    }
 
-    @Override
-    public boolean getIs_vip() {
-        return (boolean) attributes.get("is_vip");
-    }
+
+
+
 }

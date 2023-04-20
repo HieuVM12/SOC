@@ -1,5 +1,7 @@
 package com.example.springsocial.security.oauth2.user;
 
+import com.example.springsocial.model.AccountType;
+
 import java.util.Map;
 
 public class FacebookOAuth2UserInfo extends OAuth2UserInfo {
@@ -21,21 +23,5 @@ public class FacebookOAuth2UserInfo extends OAuth2UserInfo {
     public String getEmail() {
         return (String) attributes.get("email");
     }
-    @Override
-    public boolean getIs_vip() {
-        return (boolean) attributes.get("is_vip");
-    }
-    @Override
-    public String getImageUrl() {
-        if(attributes.containsKey("picture")) {
-            Map<String, Object> pictureObj = (Map<String, Object>) attributes.get("picture");
-            if(pictureObj.containsKey("data")) {
-                Map<String, Object>  dataObj = (Map<String, Object>) pictureObj.get("data");
-                if(dataObj.containsKey("url")) {
-                    return (String) dataObj.get("url");
-                }
-            }
-        }
-        return null;
-    }
+
 }

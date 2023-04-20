@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users", uniqueConstraints = {
@@ -11,23 +12,18 @@ import javax.validation.constraints.NotNull;
 })
 public class User {
     @Id
+    @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @Column(nullable = false)
-    private String name;
+    private String username;
 
     @Email
     @Column(nullable = false)
     private String email;
 
-    private String imageUrl;
 
-    @Column(nullable = false)
-    private Boolean emailVerified = false;
-
-    @Column(nullable = false)
-    private boolean is_vip = false;
     @JsonIgnore
     private String password;
 
@@ -35,30 +31,28 @@ public class User {
     @Enumerated(EnumType.STRING)
     private AuthProvider provider;
 
-    private String providerId;
 
-    public Long getId() {
+    @Column(name = "account_type")
+    @Enumerated(EnumType.STRING)
+    private AccountType accountType;
+
+    @Column(name = "vip_expiration_time")
+    private LocalDateTime vipExpirationTime;
+
+    public int getId() {
         return id;
     }
 
-    public Boolean getIs_vip() {
-        return is_vip;
-    }
-
-    public void setIs_vip(boolean is_vip) {
-        this.is_vip = is_vip;
-    }
-
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -67,22 +61,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public Boolean getEmailVerified() {
-        return emailVerified;
-    }
-
-    public void setEmailVerified(Boolean emailVerified) {
-        this.emailVerified = emailVerified;
     }
 
     public String getPassword() {
@@ -101,12 +79,19 @@ public class User {
         this.provider = provider;
     }
 
-    public String getProviderId() {
-        return providerId;
+    public AccountType getAccountType() {
+        return accountType;
     }
 
-    public void setProviderId(String providerId) {
-        this.providerId = providerId;
+    public void setAccountType(AccountType accountType) {
+        this.accountType = accountType;
     }
 
+    public LocalDateTime getVipExpirationTime() {
+        return vipExpirationTime;
+    }
+
+    public void setVipExpirationTime(LocalDateTime vipExpirationTime) {
+        this.vipExpirationTime = vipExpirationTime;
+    }
 }
